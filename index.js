@@ -2,7 +2,7 @@ var express = require('express');
 const fs = require('fs');
 var cors = require('cors');
 var app = express();
-const port = 8080;
+const port = 8081;
 var _ = require('lodash');
 let categories = JSON.parse(fs.readFileSync('./data/categories.json'));
 let games = JSON.parse(fs.readFileSync('./data/games.json'));
@@ -41,9 +41,8 @@ app.get('/games', function (req, res) {
     res.send(games);
   }
 
-  console.log(req);
 });
 
 app.listen(port, function () {
-  console.log('Example app listening on port ' + port + '!');
+  console.log('App listening on port ' + port + '!');
 });
